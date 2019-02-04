@@ -1,3 +1,6 @@
-Tareas:
--Descargar y compilar los ejemplos.
+Task:
 -Leer un archivo plano. Ejecutar un Login N veces.
+Research:
+-Exceptions--
+-Leer archivos .csv
+-Utilizar imágenes
