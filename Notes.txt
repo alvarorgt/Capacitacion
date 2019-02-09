@@ -1,6 +1,20 @@
-Task:
+﻿Task:
 -Leer un archivo plano. Ejecutar un Login N veces.
 Research:
 -Exceptions--
 -Leer archivos .csv
 -Utilizar imágenes
+-Sql connect
+-Keyword Driven
+-Solid
+
+******************
+git push -u origin master
+*************************
+
+
+
+
+
+
+

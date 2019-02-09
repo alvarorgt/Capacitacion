@@ -22,51 +22,37 @@ public class Principal {
 		// TODO Auto-generated method stub
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
-		File data = new File("Users.txt");
-		FileReader fr;
+		KeyWords Key = new KeyWords();
 		
 		//driver.get("http://sahitest.com/demo/training/login.htm");
 		try {
-			fr = new FileReader(data);
-			BufferedReader br = new BufferedReader(fr);
-			String linea = "";
-			while((linea=br.readLine())!=null){
-			try {
-			String[] datos = linea.split(",");
 			driver.get("http://sahitest.com/demo/training/login.htm");
-			WebElement txtUsuario = driver.findElement(By.name("user"));
-			txtUsuario.sendKeys(datos[0]);
-			WebElement txtPassword = driver.findElement(By.name("password"));
-			txtPassword.sendKeys(datos[1]);
-			WebElement BtnLogin = driver
-					.findElement(By.xpath("/html/body/center/div/form/table/tbody/tr[3]/td[2]/input"));
-			BtnLogin.click();
+			Key.Write(driver,"user","kk");
+			Key.Write(driver, "password","34");
+			Key.Click(driver,"/html/body/center/div/form/table/tbody/tr[3]/td[2]/input");
 			WebElement lblerror = driver.findElement(By.xpath("//*[@id=\"errorMessage\"]"));
-			TakesScreenshot scrShot =((TakesScreenshot)driver);
-			//File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
-			//File DestFile=new File("C:\\Users\\ASUS\\Documents\\Automatizacion\\Capacitación\\leerarchivos");
-			//FileUtils.copyFile(SrcFile, DestFile);
-			driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
+			//driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
 			if (lblerror.isDisplayed()) {
 				System.out.println("ERROR!");
-				File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
-				File DestFile=new File("C:\\Users\\ASUS\\Documents\\Automatizacion\\Capacitación\\leerarchivos\\"+System.currentTimeMillis()+".png");
-				FileUtils.copyFile(SrcFile, DestFile);
+				//File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
+				//File DestFile=new File("C:\\Users\\ASUS\\Documents\\Automatizacion\\Capacitación\\leerarchivos");
+				//FileUtils.copyFile(SrcFile, DestFile);
 			}
 			
 			
 		} catch (Exception e) {
 
 		}
+		driver.close();
 			
 			}
-		}
+		}/*
 		 catch (IOException e1) {
 			 e1.printStackTrace();
 		 }
 		driver.close();
 	}
 		 }
-	
+	*/
 
 
