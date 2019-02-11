@@ -1,18 +1,15 @@
 package com.qvision.capa.tests;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+
 
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.qvision.capa.keys.KeyWords;
-import com.qvision.capa.pages.MainPage;
 
 
 
