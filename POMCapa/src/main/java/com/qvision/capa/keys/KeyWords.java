@@ -13,7 +13,7 @@ public class KeyWords {
 		try {
 	TakesScreenshot scrShot =((TakesScreenshot)driver);
 	File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
-	File DestFile=new File("C:\\Users\\ASUS\\Documents\\Automatizacion\\Capacitacion\\POMCapa\\Evidencia"+System.currentTimeMillis()+".png");
+	File DestFile=new File("C:\\Users\\ASUS\\Documents\\Automatizacion\\Capacitacion\\POMCapa\\Evidencia\\"+System.currentTimeMillis()+".png");
 	FileUtils.copyFile(SrcFile, DestFile);
 		}
 		catch (Exception e) {

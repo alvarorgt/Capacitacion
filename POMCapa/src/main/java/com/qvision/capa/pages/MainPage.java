@@ -15,6 +15,8 @@ public class MainPage {
 	WebElement txtJava;
 	WebElement txtRuby;
 	WebElement txtPhyton;
+	String box;
+	WebElement btnAdd;
 	
 	
 	public boolean validarIngreso() {
@@ -38,6 +40,10 @@ public class MainPage {
 		txtRuby = driver.findElement(By.xpath("//*[@id=\"listing\"]/tbody/tr[3]/td[4]/input"));
 		txtRuby.sendKeys(dato2);
 		txtPhyton = driver.findElement(By.xpath("//*[@id=\"listing\"]/tbody/tr[4]/td[4]/input"));
-		txtPhyton.sendKeys(dato3);		
+		txtPhyton.sendKeys(dato3);	
+		btnAdd = driver.findElement(By.xpath("//*[@id=\"available\"]/input[1]"));
+		btnAdd.click();
+		box = driver.findElement(By.id("total")).getAttribute("value");
+		System.out.println(box);
 	}
 }
