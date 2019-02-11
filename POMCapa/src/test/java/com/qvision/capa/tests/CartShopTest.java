@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -30,10 +31,16 @@ public class CartShopTest {
 	
 	@Test
 	public void testCartShop() {
-		MainPage pageMain = new MainPage(driver);
-		String Total = pageMain.ingresarDatos("1","2","3");
-		Key.ScreenShot(driver);
-		assertEquals("170", Total );
+		//MainPage pageMain = new MainPage(driver);
+		Key.limpiarBox("//*[@id=\"listing\"]/tbody/tr[2]/td[4]/input", driver);
+		Key.limpiarBox("//*[@id=\"listing\"]/tbody/tr[3]/td[4]/input", driver);
+		Key.limpiarBox("//*[@id=\"listing\"]/tbody/tr[4]/td[4]/input", driver);
+		Key.ingresarDatos(1,"//*[@id=\"listing\"]/tbody/tr[2]/td[4]/input",driver);
+		Key.ingresarDatos(2,"//*[@id=\"listing\"]/tbody/tr[3]/td[4]/input",driver);
+		Key.ingresarDatos(3,"//*[@id=\"listing\"]/tbody/tr[4]/td[4]/input",driver);
+		Key.Click(driver, "//*[@id=\"available\"]/input[1]");
+		int Total = Key.tomarDatos("//*[@id=\"total\"]",driver);
+		Assert.assertEquals(1750, Total);
 	}
 	@After
 	public void cerrar() {
