@@ -31,10 +31,13 @@ public class MainPage {
 		return isValidate;
 	}
 	
-	/*public void ingresarDatos(String dato1, String dato2, String dato3) {
+	public void ingresarDatos(String dato1, String dato2, String dato3) {
 		
-		txtJava = driver.findElement(By.name("q"));
-		
-		
-	}*/
+		txtJava = driver.findElement(By.xpath("//*[@id=\"listing\"]/tbody/tr[2]/td[4]/input"));
+		txtJava.sendKeys(dato1);
+		txtRuby = driver.findElement(By.xpath("//*[@id=\"listing\"]/tbody/tr[3]/td[4]/input"));
+		txtRuby.sendKeys(dato2);
+		txtPhyton = driver.findElement(By.xpath("//*[@id=\"listing\"]/tbody/tr[4]/td[4]/input"));
+		txtPhyton.sendKeys(dato3);		
+	}
 }

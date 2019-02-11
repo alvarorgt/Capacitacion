@@ -26,6 +26,9 @@ dependencies {
     
     // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server
 	compile group: 'org.seleniumhq.selenium', name: 'selenium-server', version: '3.141.59'
+	// https://mvnrepository.com/artifact/commons-io/commons-io
+	compile group: 'commons-io', name: 'commons-io', version: '2.6'
+	
     
 }
 

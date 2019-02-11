@@ -22,8 +22,7 @@ public class LoginPage {
 		txtPass = driver.findElement(By.name("password"));
 		txtPass.sendKeys(pass);
 		BtnLogin = driver.findElement(By.xpath("/html/body/center/div/form/table/tbody/tr[3]/td[2]/input"));
-		BtnLogin.click();
-		
+		BtnLogin.click();		
 	}
 
 }
