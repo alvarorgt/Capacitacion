@@ -33,7 +33,7 @@ public class MainPage {
 		return isValidate;
 	}
 	
-	public void ingresarDatos(String dato1, String dato2, String dato3) {
+	public String ingresarDatos(String dato1, String dato2, String dato3) {
 		
 		txtJava = driver.findElement(By.xpath("//*[@id=\"listing\"]/tbody/tr[2]/td[4]/input"));
 		txtJava.sendKeys(dato1);
@@ -45,5 +45,6 @@ public class MainPage {
 		btnAdd.click();
 		box = driver.findElement(By.id("total")).getAttribute("value");
 		System.out.println(box);
+		return box;
 	}
 }

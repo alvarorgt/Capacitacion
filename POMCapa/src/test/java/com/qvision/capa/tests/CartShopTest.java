@@ -1,5 +1,6 @@
 package com.qvision.capa.tests;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
@@ -18,7 +19,6 @@ public class CartShopTest {
 	
 	WebDriver driver;
 	KeyWords Key = new  KeyWords ();
-	WebElement box;
 	
 	
 	@Before
@@ -31,9 +31,9 @@ public class CartShopTest {
 	@Test
 	public void testCartShop() {
 		MainPage pageMain = new MainPage(driver);
-		pageMain.ingresarDatos("1","2","3");
+		String Total = pageMain.ingresarDatos("1","2","3");
 		Key.ScreenShot(driver);
-		
+		assertEquals("170", Total );
 	}
 	@After
 	public void cerrar() {
