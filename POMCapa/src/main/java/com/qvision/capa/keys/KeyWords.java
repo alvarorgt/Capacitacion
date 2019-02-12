@@ -44,10 +44,18 @@ public class KeyWords {
 		ScreenShot(driver);
 	}
 
-	public void ingresarDatos(int dato, String ID, WebDriver driver) {
+	/*public void ingresarDatos(int dato, String ID, WebDriver driver) {
 
 		txt = driver.findElement(By.xpath(ID));
 		txt.sendKeys(String.valueOf(dato));
+		ScreenShot(driver);
+
+	}*/
+	
+	public void ingresarDatos(String dato, String ID, WebDriver driver) {
+
+		txt = driver.findElement(By.xpath(ID));
+		txt.sendKeys(dato);
 		ScreenShot(driver);
 
 	}
