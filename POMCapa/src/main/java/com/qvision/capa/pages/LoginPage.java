@@ -24,5 +24,18 @@ public class LoginPage {
 		BtnLogin = driver.findElement(By.xpath("/html/body/center/div/form/table/tbody/tr[3]/td[2]/input"));
 		BtnLogin.click();		
 	}
+	
+	public boolean validarIngreso() {
+		boolean isValidate = false;
+		try {
+			WebElement lblTitle = driver.findElement(By.xpath("/html/body/center/div/b"));
+			if (lblTitle.isDisplayed()) {
+				isValidate = true;
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return isValidate;
+	}
 
 }

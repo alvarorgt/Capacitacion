@@ -1,8 +1,12 @@
 package com.qvision.capa.keys;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -14,6 +18,8 @@ public class KeyWords {
 	WebElement txt;
 	int box;
 	WebElement btn;
+	File data = new File("Buy.txt");
+	FileReader fr;
 
 	public void ScreenShot(WebDriver driver) {
 		try {
@@ -74,5 +80,6 @@ public class KeyWords {
 		txt = driver.findElement(By.xpath(id));
 		txt.clear();
 	}
-
+	
+	
 }
