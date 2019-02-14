@@ -1,16 +1,23 @@
 ﻿Task:
--Leer un archivo plano. Ejecutar un Login N veces.
+-Leer xls
+-ScreenShot to PopUp
 Research:
 -Exceptions--
--Leer archivos .csv
 -Utilizar imágenes
 -Sql connect
 -Keyword Driven
 -Solid
+--Page or test?
+-Xpath - Alternativa
+-throws Exception
 
 ******************
 git push -u origin master
 *************************
+
+**************PAGE*******
+https://medium.com/@sarahelson81/taking-automated-screenshots-using-selenium-ca74c4dfdd3c
+*************
 
 
 
