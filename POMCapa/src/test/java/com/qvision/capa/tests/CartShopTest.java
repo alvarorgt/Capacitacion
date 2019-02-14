@@ -54,13 +54,13 @@ public class CartShopTest {
 			while((linea=br.readLine())!=null){
 			try {
 			String[] datos = linea.split(",");
-			Key.Click(driver,"//*[@id=\"available\"]/input[2]");
+			Key.clicks(driver,"//*[@id=\"available\"]/input[2]");
 			Key.ingresarDatos(datos[0],"//*[@id=\"listing\"]/tbody/tr[2]/td[4]/input",driver);
 			Key.ingresarDatos(datos[1],"//*[@id=\"listing\"]/tbody/tr[3]/td[4]/input",driver);
 			Key.ingresarDatos(datos[2],"//*[@id=\"listing\"]/tbody/tr[4]/td[4]/input",driver);
-			Key.Click(driver, "//*[@id=\"available\"]/input[1]");
+			Key.clicks(driver, "//*[@id=\"available\"]/input[1]");
 			int Total = Key.tomarDatos("//*[@id=\"total\"]",driver);
-			Assert.assertEquals(datos[4], Total);
+			Assert.assertEquals(datos[3], Total);
 						
 		} catch (Exception e) {
 

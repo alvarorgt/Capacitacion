@@ -1,17 +1,15 @@
 package com.qvision.capa.keys;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class KeyWords {
 
@@ -21,14 +19,15 @@ public class KeyWords {
 	File data = new File("Buy.txt");
 	FileReader fr;
 
-	public void ScreenShot(WebDriver driver) {
+	public void screenShot(WebDriver driver) {
 		try {
 			TakesScreenshot scrShot = ((TakesScreenshot) driver);
 			File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
 			File DestFile = new File("Evidencia\\" + System.currentTimeMillis() + ".png");
 			FileUtils.copyFile(SrcFile, DestFile);
 		} catch (Exception e) {
-			System.out.println("ERROR EN SS!");
+			System.out.println(e.getMessage());
+			System.out.println("ERROR EN SS!!!");
 		}
 	}
 
@@ -37,17 +36,17 @@ public class KeyWords {
 			WebElement lblerror = driver.findElement(By.xpath(ID));
 			if (lblerror.isDisplayed()) {
 				System.out.println("ERROR!");
-				ScreenShot(driver);
+				screenShot(driver);
 			}
 		} catch (Exception e) {
 			System.out.println("ERROR in crash!");
 		}
 	}
 
-	public void Click(WebDriver driver, String ID) {
-		btn = driver.findElement(By.xpath(ID));
+	public void clicks(WebDriver driver, String id) {
+		btn = driver.findElement(By.xpath(id));
 		btn.click();
-		ScreenShot(driver);
+		screenShot(driver);
 	}
 
 	/*public void ingresarDatos(int dato, String ID, WebDriver driver) {
@@ -58,11 +57,11 @@ public class KeyWords {
 
 	}*/
 	
-	public void ingresarDatos(String dato, String ID, WebDriver driver) {
+	public void ingresarDatos(String dato, String id, WebDriver driver) {
 
-		txt = driver.findElement(By.xpath(ID));
+		txt = driver.findElement(By.xpath(id));
 		txt.sendKeys(dato);
-		ScreenShot(driver);
+		screenShot(driver);
 
 	}
 
@@ -70,7 +69,7 @@ public class KeyWords {
 
 		box = Integer.parseInt(driver.findElement(By.xpath(id)).getAttribute("value"));
 		System.out.println(box);
-		ScreenShot(driver);
+		screenShot(driver);
 		return box;
 
 	}
@@ -79,6 +78,12 @@ public class KeyWords {
 		
 		txt = driver.findElement(By.xpath(id));
 		txt.clear();
+	}
+	
+	public void listaD (String id, String dato, WebDriver driver) {
+		Select lista = new Select (driver.findElement(By.xpath(id)));
+		lista.selectByVisibleText(dato);
+		screenShot(driver);
 	}
 	
 	

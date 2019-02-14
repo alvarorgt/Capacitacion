@@ -29,7 +29,7 @@ KeyWords Key = new  KeyWords ();
 	@Test
 	public void testLogOut() {
 		LoginPage pageLogin = new LoginPage(driver);
-		Key.Click(driver,"//*[@id=\"available\"]/input[3]");
+		Key.clicks(driver,"//*[@id=\"available\"]/input[3]");
 		assertTrue("No Inició", pageLogin.validarIngreso());
 	}
 
