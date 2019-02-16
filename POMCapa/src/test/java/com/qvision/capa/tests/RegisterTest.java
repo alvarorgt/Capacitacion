@@ -24,7 +24,7 @@ public class RegisterTest {
 	@Test
 	public void formularioLogin() {
 		RegisterPage pageRegister = new RegisterPage (driver);
-		String val = pageRegister.llenarFormulario("q", "e", "w", "r", "w");
+		String val = pageRegister.llenarFormulario("q", "e", "w", "r", "w", "f");
 		assertEquals("Registered Successfully", val);		
 	}
 	

@@ -18,10 +18,10 @@ public class MainPage {
 	}
 
 
-	File data = new File("Users.txt");
+	/*File data = new File("Users.txt");
 	FileReader fr;
 	KeyWords Key = new  KeyWords ();
-
+*/
 	public boolean validarIngreso() {
 		boolean isValidate = false;
 		try {

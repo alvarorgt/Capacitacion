@@ -60,7 +60,7 @@ public class CartShopTest {
 			Key.ingresarDatos(datos[2],"//*[@id=\"listing\"]/tbody/tr[4]/td[4]/input",driver);
 			Key.clicks(driver, "//*[@id=\"available\"]/input[1]");
 			int Total = Key.tomarDatos("//*[@id=\"total\"]",driver);
-			Assert.assertEquals(datos[3], Total);
+			Assert.assertEquals(Integer.parseInt(datos[3]), Total);
 						
 		} catch (Exception e) {
 
