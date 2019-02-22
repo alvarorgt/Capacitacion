@@ -1,0 +1,2 @@
+SELECT reverse(msisdn), Charge_action, event_serial FROM CBS.pms_charging_dyn_partition@analytics_stdby WHERE rownum < 10--msisdn='8284144813';
+SELECT partition_number, spid, partition_type FROM CBS.pms_charging_dyn_partition@analytics_stdby WHERE msisdn = '8284144813' order by partition_number;
