@@ -18,16 +18,16 @@ public class RegisterPage {
 	WebElement txt;
 	WebElement btn;
 
-	public String llenarFormulario(String dato1, String dato2, String dato3, String dato4, String dato5) {
+	public String llenarFormulario(String dato1, String dato2, String dato3, String dato4, String dato5, String dato6) {
 
 		Key.ingresarDatos(dato1, "//*[@id=\"uid\"]", driver);
 		Key.ingresarDatos(dato2, "//*[@id=\"pid\"]", driver);
 		Key.ingresarDatos(dato3, "//*[@id=\"pid2\"]", driver);
 		Key.ingresarDatos(dato4, "//*[@id=\"taid\"]", driver);
 		Key.ingresarDatos(dato5, "//*[@id=\"btaid\"]", driver);
-			if (dato5 == "m" || dato5 == "M") {
+			if (dato6 == "m" || dato6 == "M") {
 				Key.clicks(driver, "/html/body/center/div/form/div/table/tbody/tr[4]/td[2]/input[1]");
-			} else if (dato5 == "f" || dato5 == "F") {
+			} else if (dato6 == "f" || dato6 == "F") {
 				Key.clicks(driver, "/html/body/center/div/form/div/table/tbody/tr[4]/td[2]/input[2]");
 			}
 			else {
