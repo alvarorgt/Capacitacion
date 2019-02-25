@@ -15,6 +15,7 @@ class Initial {
 	public static void main(String[] args) {
 		ReadBD BD = new ReadBD();
 		File data = new File("Queries.txt");
+		//File con = new File("Coneccions\\Connections.txt");
 		FileReader fr;
 		
         

@@ -18,6 +18,8 @@ public class ReadBD {
 			fichero = new FileWriter("Files\\Result.txt");
 	        pw = new PrintWriter(fichero);
 			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			
 
 			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@10.69.37.58:1521:RGDWH", "PRUEBAS", "TigoUne.2017");
 
