@@ -129,7 +129,7 @@
             <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 25-02-2019 15:49</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 26-02-2019 16:16</span>
     <br style="clear:left"/>
 </div>
 
@@ -164,9 +164,9 @@
                 <table class="outcome-header">
                     <tr>
                         <td colspan="2" class="test-title-bar">
-                            <span class="outcome-icon"><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></span>
+                            <span class="outcome-icon"><i class='fa fa-exclamation-triangle error-icon fa-2x' title='ERROR'></i></span>
                             <span class="test-case-title">
-                                <span class="success-color">Search Successful
+                                <span class="error-color">Search Successful
                                     <span class="related-issue-title"></span>
                                 </span>
                             </span>
@@ -183,17 +183,52 @@
 
     <div id="beforetable"></div>
     <div id="contenttilttle">
+            <div class="screenshotFailure panel panel-danger">
+
+    <div style="display:block">
+        <div class="table">
+            <div class="row">
+                <div class="col-sm-10" style="padding-left:1.5em; padding-top:0.5em; padding-bottom:0.5em;">
+                    <span class="error-message error-message-title">No such element exception: Timed out after 20 seconds. Element not found</span>
+                </div>
+                <div class="col-sm-2">
+                    <a class="btn btn-warning details-button" data-toggle="collapse" href="#stacktraceModal-overall""
+                       role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="far fa-eye"></i> More details</a>
+                </div>
+             </div>
+        </div>
+    <div>
+
+    <!-- Details Section -->
+    <div class="row stacktrace-details">
+      <div class="col">
+        <div class="collapse multi-collapse" id="stacktraceModal-overall">
+            <div class="card">
+                <div class="card-header">
+                    <h4>org.openqa.selenium.NoSuchElementException </h4>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <pre>com.qvision.elempleo.pages.PrincipalPage.search(PrincipalPage.java:38)<br />com.qvision.elempleo.steps.PrincipalStep.search(PrincipalStep.java:18)<br />com.qvision.elempleo.stepsdefinitions.SearchStepsDefinitions.iSearchForJobsContainingContador(SearchStepsDefinitions.java:25)<br />✽.I search for jobs containing contador(src/test/resources/features/search.feature:6)<br /></pre>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                <div class="panel-body">
+                    <a href="pagesource6720068222311370190.html.txt" target="_blank" class="btn btn-info">HTML Source</a>
+                </div>
+            </div>
         <div class="slider-wrapper theme-default">
             <div id="slider">
-                <img src="98ec3de295b5b1a201fe89ca90a7fe653f1c653ffd5c191e8e329a9adf0ab5d2.png" title=" Given I want to find jobs with a keyword" width="1366"/>
-                <img src="98ec3de295b5b1a201fe89ca90a7fe653f1c653ffd5c191e8e329a9adf0ab5d2.png" title=" Openurl" width="1366"/>
-                <img src="98ec3de295b5b1a201fe89ca90a7fe653f1c653ffd5c191e8e329a9adf0ab5d2.png" title=" Given I want to find jobs with a keyword (completed)" width="1366"/>
-                <img src="a2d3f0dca55104ceadfb99aa420800b76580251d762cff764f6daf9d045557b4.png" title=" When I search for jobs containing contador" width="1366"/>
-                <img src="a2d3f0dca55104ceadfb99aa420800b76580251d762cff764f6daf9d045557b4.png" title=" Search: contador" width="1366"/>
-                <img src="a2d3f0dca55104ceadfb99aa420800b76580251d762cff764f6daf9d045557b4.png" title=" When I search for jobs containing contador (completed)" width="1366"/>
-                <img src="a2d3f0dca55104ceadfb99aa420800b76580251d762cff764f6daf9d045557b4.png" title=" Then I should only see items related to contador" width="1366"/>
-                <img src="a2d3f0dca55104ceadfb99aa420800b76580251d762cff764f6daf9d045557b4.png" title=" Validate" width="1366"/>
-                <img src="a2d3f0dca55104ceadfb99aa420800b76580251d762cff764f6daf9d045557b4.png" title=" Then I should only see items related to contador (completed): <span class='success-color'>SUCCESS</span>" width="1366"/>
+                <img src="a5cad9519fc45953b3385999a7e19fe6aa198fde4c9b1127c6edfd0ff5070702.png" title=" Given I want to find jobs with a keyword" width="1366"/>
+                <img src="a5cad9519fc45953b3385999a7e19fe6aa198fde4c9b1127c6edfd0ff5070702.png" title=" Openurl" width="1366"/>
+                <img src="a5cad9519fc45953b3385999a7e19fe6aa198fde4c9b1127c6edfd0ff5070702.png" title=" Given I want to find jobs with a keyword (completed)" width="1366"/>
+                <img src="a5cad9519fc45953b3385999a7e19fe6aa198fde4c9b1127c6edfd0ff5070702.png" title=" When I search for jobs containing contador" width="1366"/>
+                <img src="3038dfe7fe87eed23260f4e580c76c5d60c1f8cbdd46d102c4ae96c3a09f1f5b.png" title=" Search: cont: <span class='error-color'>ERROR</span>" width="1366"/>
             </div>
         </div>
 

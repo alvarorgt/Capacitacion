@@ -22,7 +22,7 @@ public class SearchStepsDefinitions {
 
 	@When("^I search for jobs containing contador$")
 	public void iSearchForJobsContainingContador() {
-		stepPrincipal.search("contador");
+		stepPrincipal.search("cont");
 	}
 	
 

@@ -1,5 +1,6 @@
 package com.qvision.elempleo.pages;
 
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
@@ -13,8 +14,14 @@ public class PrincipalPage extends PageObject {
 	@FindBy (xpath = "/html/body/div[4]/section[1]/div[3]/div[1]/div[2]/div/form/div/div/span[1]/input")
 	WebElement txtSearch;
 	
+	@FindBy (xpath = "/html/body/div[4]/section[1]/div[3]/div[1]/div[2]/div/form/div/div/span[1]/div/div/div[1]")
+	WebElement btnSugges;
+	
 	@FindBy (xpath = "/html/body/div[4]/section[1]/div[3]/div[1]/div[2]/div/form/div/div/span[3]/button")
-	WebElement btnSearch;
+	WebElement btnCity;
+	
+	@FindBy (xpath = "/html/body/div[4]/section[1]/div[3]/div[1]/div[2]/div/form/div/div/span[2]/div/div/div[2]")
+	WebElement txtCity;
 	
 	@FindBy (xpath = "/html/body/div[8]/div[2]/h1")
 	WebElement lblValidate;
@@ -22,10 +29,13 @@ public class PrincipalPage extends PageObject {
 	@FindBy (xpath = "//*[@id=\"politics_cookieCO\"]/div/div[2]/a[2]")
 	WebElement btnCookies;
 	
+	
 	public void search (String search) {
 		btnCookies.click();
 		txtSearch.sendKeys(search);
-		btnSearch.click();		
+		btnSugges.click();
+		btnCity.click();	
+		txtCity.click();
 	}
 	
 	public boolean validate() {
@@ -35,8 +45,8 @@ public class PrincipalPage extends PageObject {
 				isSearch = true;
 				
 			}
-		} catch (Exception e) {
-			//	System.out.println(e.getMessage());
+		} catch (NoSuchElementException e) {
+			System.out.println(e.getMessage());
 		}
 		return isSearch;
 	}
