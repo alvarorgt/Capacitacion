@@ -2,6 +2,7 @@ package com.qvision.elempleo.stepsdefinitions;
 
 import static org.junit.Assert.assertTrue;
 
+import java.io.IOException;
 
 import com.qvision.elempleo.steps.PrincipalStep;
 
@@ -21,8 +22,10 @@ public class SearchStepsDefinitions {
 	}
 
 	@When("^I search for jobs containing contador$")
-	public void iSearchForJobsContainingContador() {
+	public void iSearchForJobsContainingContador() throws IOException {
 		stepPrincipal.search("cont");
+		stepPrincipal.filters();
+		stepPrincipal.readOfferts();
 	}
 	
 
