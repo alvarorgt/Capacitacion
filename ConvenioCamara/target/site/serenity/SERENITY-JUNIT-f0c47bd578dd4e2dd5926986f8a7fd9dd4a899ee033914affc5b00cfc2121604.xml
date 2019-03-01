@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Create radication agreement on principal page" skipped="0" tests="1" time="91.75" timestamp="2019-03-01 05:01:15"><testcase name="Radication Successful"><failure type="java.lang.AssertionError"/><system-err>null&#13;
+com.qvision.camara.convenio.stepsdefinitions.ConvenioStepsDefinitions.iShouldExecuteAllProcessForCreateARadicationOfAgreementAndGetANumberOfRadicate(ConvenioStepsDefinitions.java:29)&#13;
+✽.I should execute all process for create a radication of agreement and get a number of radicate(src/test/resources/features/convenio.feature:7)&#13;
+</system-err></testcase></testsuite>

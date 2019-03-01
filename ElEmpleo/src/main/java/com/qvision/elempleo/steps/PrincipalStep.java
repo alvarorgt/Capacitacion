@@ -32,8 +32,9 @@ public class PrincipalStep {
 	
 	@Step
 	public boolean validate() {
-		return pagePrincipal.validate();
-		
+		return pagePrincipal.validate();		
 	}
+	
+	
 
 }

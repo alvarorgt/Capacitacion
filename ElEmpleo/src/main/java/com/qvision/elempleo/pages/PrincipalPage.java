@@ -1,18 +1,21 @@
 package com.qvision.elempleo.pages;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 
+import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.core.pages.PageObject;
 import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.support.FindBys;
-
 
 //import net.serenitybdd.core.annotations.findby.FindBy;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -51,13 +54,14 @@ public class PrincipalPage extends PageObject {
 	@FindBy(xpath = "/html/body/div[8]/div[3]/div[1]/h2/span[1]/strong[2]")
 	WebElement txtNumeroDeResultados;
 
-	@FindBy(xpath = "/html/body/div[8]/div[4]/div[1]/div[3]/div[1]/div[1]/ul")
-	WebElement txtFirst;
+	WebElement txtTituloDeOferta;
+	WebElement txtEmpresa;
 
 	FileWriter fichero = null;
 	PrintWriter pw = null;
-	
+
 	int i = 1;
+	String j;
 
 	public void search(String search) {
 		btnCookies.click();
@@ -82,7 +86,7 @@ public class PrincipalPage extends PageObject {
 
 	public void filters() {
 		listAreadeTrabajo.click();
-		ExpectedConditions.elementToBeClickable(btnsalario);
+		waitFor(ExpectedConditions.elementToBeClickable(btnsalario));
 		btnsalario.click();
 	}
 
@@ -93,19 +97,26 @@ public class PrincipalPage extends PageObject {
 			int numEntero = Integer.parseInt(txtNumeroDeResultados.getText());
 			System.out.println(numEntero);
 			for (int i = 1; i <= numEntero; i++) {
-				String txtTitle = "Hola";
-				System.out.println(txtTitle + "\n" + "**********************************");
-				pw.println(txtTitle + "\n" + "*****************************************");
+				txtTituloDeOferta = find(
+						By.xpath("/html/body/div[8]/div[4]/div[1]/div[3]/div[" + i + "]/div[1]/ul/li[1]/h2/a"));
+				String txtOferta = txtTituloDeOferta.getText();
+				txtEmpresa = find(By.xpath(
+						"/html/body/div[8]/div[4]/div[1]/div[3]/div[" + i + "]/div[1]/ul/li[2]/h3/span[2]/span"));
+				String txtEmpresas = txtEmpresa.getText();
+				System.out.println(txtOferta + "\n" + txtEmpresas + "\n" + "**********************************");
+				pw.println(txtOferta + "\n" + txtEmpresas + "\n" + "**********************************");
 			}
 		} catch (NoSuchElementException e) {
 			System.out.println(e);
-		}finally {
-	           try {
-	           if (null != fichero)
-	              fichero.close();
-	           } catch (Exception e2) {
-	              e2.printStackTrace();
-	           }
+		} finally {
+			try {
+				if (null != fichero)
+					fichero.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
 	}
-}
+	
+	
 }

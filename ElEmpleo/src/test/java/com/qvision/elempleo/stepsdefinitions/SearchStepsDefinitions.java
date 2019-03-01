@@ -22,16 +22,16 @@ public class SearchStepsDefinitions {
 	}
 
 	@When("^I search for jobs containing contador$")
-	public void iSearchForJobsContainingContador() throws IOException {
+	public void iSearchForJobsContainingContador() {
 		stepPrincipal.search("cont");
-		stepPrincipal.filters();
-		stepPrincipal.readOfferts();
+		stepPrincipal.filters();		
 	}
 	
 
-	@Then("^I should only see items related to contador$")
-	public void iShouldOnlySeeItemsRelatedToContador() {
-		assertTrue(stepPrincipal.validate());
+	@Then("^I should only see items related to contador and save this in a .txt file$")
+	public void iShouldOnlySeeItemsRelatedToContador() throws IOException {
+		stepPrincipal.readOfferts();
+		assertTrue(stepPrincipal.validate());		
 	    }
 	
 }
