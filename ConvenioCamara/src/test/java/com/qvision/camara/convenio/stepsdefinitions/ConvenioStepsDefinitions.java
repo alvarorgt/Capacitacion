@@ -27,6 +27,7 @@ public class ConvenioStepsDefinitions {
 	@Then("^I should execute all process for create a radication of agreement and get a number of radicate$")
 	public void iShouldExecuteAllProcessForCreateARadicationOfAgreementAndGetANumberOfRadicate() {
 		assertTrue(stepPrincipal.validate());
+		stepPrincipal.process();
 	}
 	
 

@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Create radication agreement on principal page" skipped="0" tests="1" time="91.75" timestamp="2019-03-01 05:01:15"><testcase name="Radication Successful"><failure type="java.lang.AssertionError"/><system-err>null&#13;
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="Create radication agreement on principal page" skipped="0" tests="1" time="32.09" timestamp="2019-03-04 03:42:48"><testcase name="Radication Successful"><error message="Timed out after 20000 milliseconds: net.serenitybdd.core.pages.RenderedPageObjectView$$Lambda$323/1859153769@3015db78&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'LRAMADO', ip: '10.110.20.87', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'&#10;Driver info: driver.version: unknown&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'LRAMADO', ip: '10.110.20.87', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.TimeoutException">Timed out after 20000 milliseconds: net.serenitybdd.core.pages.RenderedPageObjectView$$Lambda$323/1859153769@3015db78
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LRAMADO', ip: '10.110.20.87', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: driver.version: unknown
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LRAMADO', ip: '10.110.20.87', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: driver.version: unknown</error><system-err>Timed out after 20000 milliseconds: net.serenitybdd.core.pages.RenderedPageObjectView$$Lambda$323/1859153769@3015db78
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LRAMADO', ip: '10.110.20.87', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: driver.version: unknown
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LRAMADO', ip: '10.110.20.87', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: driver.version: unknown&#13;
+com.qvision.camara.convenio.pages.PrincipalPage.validate(PrincipalPage.java:51)&#13;
+com.qvision.camara.convenio.steps.PrincipalStep.validate(PrincipalStep.java:23)&#13;
 com.qvision.camara.convenio.stepsdefinitions.ConvenioStepsDefinitions.iShouldExecuteAllProcessForCreateARadicationOfAgreementAndGetANumberOfRadicate(ConvenioStepsDefinitions.java:29)&#13;
 ✽.I should execute all process for create a radication of agreement and get a number of radicate(src/test/resources/features/convenio.feature:7)&#13;
 </system-err></testcase></testsuite>

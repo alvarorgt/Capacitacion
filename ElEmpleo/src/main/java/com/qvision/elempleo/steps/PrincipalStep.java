@@ -31,9 +31,16 @@ public class PrincipalStep {
 	}
 	
 	@Step
+	public void screenshot() {
+		pagePrincipal.screenshot();
+	}
+	
+	@Step
 	public boolean validate() {
 		return pagePrincipal.validate();		
 	}
+	
+	
 	
 	
 

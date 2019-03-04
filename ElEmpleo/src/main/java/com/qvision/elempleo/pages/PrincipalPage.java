@@ -8,12 +8,10 @@ import org.openqa.selenium.WebElement;
 
 import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.core.pages.PageObject;
+import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.support.FindBys;
-
-//import net.serenitybdd.core.annotations.findby.FindBy;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -42,8 +40,8 @@ public class PrincipalPage extends PageObject {
 	@FindBy(xpath = "//*[@id=\"politics_cookieCO\"]/div/div[2]/a[2]")
 	WebElement btnCookies;
 
-	@FindBy(id = "salary1")
-	WebElement btnsalario;
+	@FindBy(xpath = "//*[@id=\"salary1\"]")
+	WebElementFacade btnsalario;
 
 	@FindBys({ @FindBy(id = "WorkAreaFilter1"), @FindBy(xpath = "//*[@id=\"WorkAreaFilter1\"]/option[2]") })
 	WebElement listAreadeTrabajo;
@@ -53,6 +51,9 @@ public class PrincipalPage extends PageObject {
 
 	@FindBy(xpath = "/html/body/div[8]/div[3]/div[1]/h2/span[1]/strong[2]")
 	WebElement txtNumeroDeResultados;
+	
+	@FindBy (xpath ="/html/body/div[4]/section[1]/div[3]/div[1]/div[2]/div/form/div/div/span[1]/input")
+	WebElement btnSearch;
 
 	WebElement txtTituloDeOferta;
 	WebElement txtEmpresa;
@@ -60,11 +61,10 @@ public class PrincipalPage extends PageObject {
 	FileWriter fichero = null;
 	PrintWriter pw = null;
 
-	int i = 1;
-	String j;
-
 	public void search(String search) {
 		btnCookies.click();
+		waitFor(btnSearch).isClickable();
+		btnSearch.click();
 		txtSearch.sendKeys(search);
 		btnSugges.click();
 		btnCity.click();
@@ -73,8 +73,9 @@ public class PrincipalPage extends PageObject {
 
 	public boolean validate() {
 		boolean isSearch = false;
+		String valid = lblValidate.getText();
 		try {
-			if (lblValidate.isDisplayed()) {
+			if (valid.equals("Empleos Contador en Bogotá") ) {
 				isSearch = true;
 
 			}
@@ -85,9 +86,10 @@ public class PrincipalPage extends PageObject {
 	}
 
 	public void filters() {
+		waitFor(listAreadeTrabajo).isClickable();
 		listAreadeTrabajo.click();
-		waitFor(ExpectedConditions.elementToBeClickable(btnsalario));
 		btnsalario.click();
+		
 	}
 
 	public void readOfferts() throws IOException {
@@ -95,7 +97,6 @@ public class PrincipalPage extends PageObject {
 			fichero = new FileWriter("Files\\Jobs.txt");
 			pw = new PrintWriter(fichero);
 			int numEntero = Integer.parseInt(txtNumeroDeResultados.getText());
-			System.out.println(numEntero);
 			for (int i = 1; i <= numEntero; i++) {
 				txtTituloDeOferta = find(
 						By.xpath("/html/body/div[8]/div[4]/div[1]/div[3]/div[" + i + "]/div[1]/ul/li[1]/h2/a"));
@@ -103,7 +104,6 @@ public class PrincipalPage extends PageObject {
 				txtEmpresa = find(By.xpath(
 						"/html/body/div[8]/div[4]/div[1]/div[3]/div[" + i + "]/div[1]/ul/li[2]/h3/span[2]/span"));
 				String txtEmpresas = txtEmpresa.getText();
-				System.out.println(txtOferta + "\n" + txtEmpresas + "\n" + "**********************************");
 				pw.println(txtOferta + "\n" + txtEmpresas + "\n" + "**********************************");
 			}
 		} catch (NoSuchElementException e) {
@@ -118,5 +118,16 @@ public class PrincipalPage extends PageObject {
 		}
 	}
 	
+	public void screenshot () {
+		try {
+			TakesScreenshot scrShot =((TakesScreenshot)getDriver());
+			File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
+			File DestFile=new File("Evidencia\\"+System.currentTimeMillis()+".png");
+			FileUtils.copyFile(SrcFile, DestFile);
+				}
+				catch (Exception e) {
+					System.out.println("ERROR EN SS!"+e);
+				}
+		}
 	
 }

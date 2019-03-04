@@ -31,6 +31,7 @@ public class SearchStepsDefinitions {
 	@Then("^I should only see items related to contador and save this in a .txt file$")
 	public void iShouldOnlySeeItemsRelatedToContador() throws IOException {
 		stepPrincipal.readOfferts();
+		stepPrincipal.screenshot();
 		assertTrue(stepPrincipal.validate());		
 	    }
 	

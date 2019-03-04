@@ -22,5 +22,10 @@ public class PrincipalStep {
 	public boolean validate() {
 		return pagePrincipal.validate();		
 	}
+	
+	@Step 
+	public void process() {
+		pagePrincipal.process();
+	}
 
 }

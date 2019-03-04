@@ -11,8 +11,6 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 		features = "src/test/resources/features/search.feature",
 		glue = "com.qvision.elempleo.stepsdefinitions",
 		snippets = SnippetType.CAMELCASE)
-
-
 public class SearchRunner {
 
 }
